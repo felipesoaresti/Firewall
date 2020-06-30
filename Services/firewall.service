@@ -1,0 +1,16 @@
+[Unit]
+
+	Description=firewall
+	After=network.target
+
+[Service]
+	
+	RemainAfterExit=yes
+	ExecStart=/etc/init.d/firewall start
+	ExecStop=/etc/init.d/firewall stop
+	ExecStop=/etc/init.d/firewall status
+	User=root
+
+[Install]
+
+	WantedBy=multi-user.target
